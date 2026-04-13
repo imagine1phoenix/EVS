@@ -45,4 +45,13 @@ Expected response:
 {
   "answer": "detailed response with data representation"
 }
+
+## Deploy on Vercel
+
+This frontend is Vercel-ready with the repository-level setup:
+
+- Root URL `/` redirects to `/frontend/`
+- API route is provided by `api/ask.js` at `POST /api/ask`
+
+For better general AI responses in production, set `HF_TOKEN` in your Vercel environment variables.
 ```

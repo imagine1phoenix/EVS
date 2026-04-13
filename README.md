@@ -187,3 +187,26 @@ Use these points in your report discussion:
 - "Show a trend graph and explain climate-change significance."
 
 This setup gives you a full progression from dataset to analysis to AI-based Q&A.
+
+## 10. Deploy On Vercel
+
+This repository now includes a Vercel serverless API endpoint at `api/ask.js` and a root redirect via `vercel.json`.
+
+### What gets deployed
+
+- Frontend at `/frontend/` (root `/` redirects here)
+- API endpoint at `POST /api/ask`
+
+### Steps
+
+1. Push this repository to GitHub.
+2. Import the repo into Vercel.
+3. Keep default framework setting (`Other`) and deploy.
+4. Optional but recommended: add environment variable `HF_TOKEN` in Vercel project settings for richer general AI answers.
+5. Redeploy after adding env vars.
+
+### Notes
+
+- If `data/processed/yearly_climate_india.csv` exists, API responds in `project` data mode.
+- If not, it automatically falls back to built-in demo climate data.
+- If `HF_TOKEN` is missing or unavailable, it falls back to local deterministic response logic.
