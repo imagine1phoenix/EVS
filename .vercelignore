@@ -1,0 +1,12 @@
+# Exclude Python training/analysis stack from Vercel deployment package
+requirements.txt
+scripts/
+src/
+models/
+
+# Local/dev artifacts
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
