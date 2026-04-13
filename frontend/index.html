@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate AI — Data-Backed Analysis</title>
+    <meta
+      name="description"
+      content="Ask Climate AI for data-backed temperature and rainfall analysis with tables, trends, and interpretation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Animated background -->
+    <div class="bg-aurora" aria-hidden="true">
+      <div class="aurora-orb aurora-orb-1"></div>
+      <div class="aurora-orb aurora-orb-2"></div>
+      <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-noise" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="app-header">
+        <div class="logo">
+          <span class="logo-icon">🌍</span>
+          <span class="logo-text">Climate AI</span>
+          <span class="logo-pulse"></span>
+        </div>
+        <div class="header-meta">
+          <span class="status-badge" id="modeBadge">Ready</span>
+        </div>
+      </header>
+
+      <section class="card">
+        <h1 class="hero-title">
+          <span class="title-word" style="--i:0">Climate</span>
+          <span class="title-word" style="--i:1">Data</span>
+          <span class="title-word" style="--i:2">Analysis</span>
+        </h1>
+        <p class="subtitle">
+          Ask questions about India's temperature and rainfall trends.
+          Get data-backed answers with tables, charts, and climate interpretation.
+        </p>
+
+        <div class="suggested-chips" id="suggestedChips">
+          <button class="chip" data-question="Is temperature increasing over the years?" style="--d:0">🌡️ Temperature trend</button>
+          <button class="chip" data-question="Compare rainfall between 2010 and 2020" style="--d:1">🌧️ Compare rainfall</button>
+          <button class="chip" data-question="Which year was the hottest and what does it mean?" style="--d:2">🔥 Hottest year</button>
+          <button class="chip" data-question="Show overall climate trend with data table" style="--d:3">📊 Full trend analysis</button>
+          <button class="chip" data-question="How does climate change affect agriculture in India?" style="--d:4">🌾 Agriculture impact</button>
+        </div>
+
+        <form id="qaForm" class="qa-bar">
+          <div class="input-wrap">
+            <input
+              id="questionInput"
+              type="text"
+              placeholder="Ask about climate trends, rainfall, temperature, or impacts..."
+              autocomplete="off"
+              required
+            />
+            <div class="input-glow"></div>
+          </div>
+          <button id="askBtn" class="ask-btn" type="submit">
+            <span class="btn-text">Ask AI</span>
+            <span class="btn-loader" aria-hidden="true"></span>
+            <span class="btn-ripple" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p id="statusText" class="status">Endpoint: POST /api/ask</p>
+      </section>
+
+      <section class="conversation" id="conversation">
+        <div class="conversation-placeholder" id="conversationPlaceholder">
+          <div class="placeholder-icon">
+            <span class="pulse-ring"></span>
+            <span class="pulse-ring pulse-ring-2"></span>
+            💬
+          </div>
+          <p>Your AI answers will appear here. Ask a question to get started.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

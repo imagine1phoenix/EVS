@@ -1,0 +1,22 @@
+kaggle:
+  datasets:
+    - berkeleyearth/climate-change-earth-surface-temperature-data
+    - rajanand/rainfall-in-india
+
+analysis:
+  country: India
+  rainfall_subdivision: All India
+  recent_year_window: 20
+  minimum_year_window: 10
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  plots_dir: outputs/plots
+  tables_dir: outputs/tables
+  report_markdown: outputs/tables/trend_interpretation.md
+  summary_json: outputs/tables/trend_summary.json
+  yearly_csv: data/processed/yearly_climate_india.csv
+  yearly_xlsx: outputs/tables/yearly_climate_india.xlsx
+  qa_jsonl: data/processed/climate_qa_train.jsonl
+  qa_eval_jsonl: data/processed/climate_qa_eval.jsonl
